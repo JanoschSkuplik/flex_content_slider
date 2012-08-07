@@ -21,17 +21,17 @@ $GLOBALS['fcsSlider']['LISTTEMPLATE']
 $GLOBALS['fcsSlider']['SLIDERCLASS']
 $GLOBALS['fcsSlider']['ITEMCLASS']
 
-#### $GLOBALS['fcsSlider']['STARTTEMPLATE'] (string)
+#### $GLOBALS['fcsSlider']['STARTTEMPLATE']
 Über diese Variable kann das Template gesteuert werden, das zusätzlich ins Template am Beginn der Slider-Gruppe integriert werden soll.
 
-#### $GLOBALS['fcsSlider']['ENDTEMPLATE'] (string)
+#### $GLOBALS['fcsSlider']['ENDTEMPLATE']
 Hierüber kann das Template gesteuert werden, das am Ende der Slider-Gruppe integriert werden soll. Dieses bietet sich dafür an die evtl. benötigten JS/CSS-Dateien zu laden und den JS-Aufruf des Sliders durchzuführen.
 
-#### $GLOBALS['fcsSlider']['LISTTEMPLATE'] (boolean)
+#### $GLOBALS['fcsSlider']['LISTTEMPLATE']
 Hierüber kann gesteuert werden ob die einzelnen Slide-Elemente durch divs oder als Liste ausgegeben werden.
 
-#### $GLOBALS['fcsSlider']['SLIDERCLASS'] (string)
+#### $GLOBALS['fcsSlider']['SLIDERCLASS']
 Hierüber lässt sich eine CSS-Klasse für den Slider zusätzlich festlegen. 
 
-#### $GLOBALS['fcsSlider']['ITEMCLASS'] (string)
+#### $GLOBALS['fcsSlider']['ITEMCLASS']
 Hierüber lässt sich den einzelnen Slide-Elementen eine weitere css-Klasse geben.
