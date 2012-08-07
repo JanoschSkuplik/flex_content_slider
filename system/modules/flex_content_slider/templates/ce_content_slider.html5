@@ -1,0 +1,37 @@
+<?php 
+//$this->showTemplateVars(); 
+?>
+<?php if ($GLOBALS['fcsSlider']['LISTTEMPLATE']): ?>
+
+<?php if ($this->fcsType=='fcsStart'): ?>
+<div class="flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>">
+<ul class="slides">
+	<?php if ($this->startTemplate): echo $this->startTemplate; endif; ?>
+	<li class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
+<?php elseif ($this->fcsType=='fcsDivider'): ?>
+	</li>
+	<li class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
+<?php else: ?>
+	</li>
+	<?php if ($this->endTemplete): echo $this->endTemplete; endif; ?>
+</ul>
+</div>
+<?php endif; ?>
+
+<?php else: ?>
+
+<?php if ($this->fcsType=='fcsStart'): ?>
+<div class="flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>">
+	<div class="slides">
+	<?php if ($this->startTemplate): echo $this->startTemplate; endif; ?>
+	<div class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
+<?php elseif ($this->fcsType=='fcsDivider'): ?>
+	</div>
+	<div class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
+<?php else: ?>
+	</div>
+	</div>
+	<?php if ($this->endTemplete): echo $this->endTemplete; endif; ?>
+</div>
+<?php endif; ?>
+<?php endif; ?>
