@@ -93,6 +93,17 @@ class ContentFlexContentSlider extends ContentElement
 				{
 					$objEndTemplate = new FrontendTemplate($GLOBALS['fcsSlider']['ENDTEMPLATE']);
 					$objEndTemplate->data = $this->arrData;
+					
+					// Hook for handling the additional data
+					if(is_array($GLOBALS['TL_HOOKS']['fcsParseStartdata']) && count($GLOBALS['TL_HOOKS']['fcsParseStartdata']))
+					{
+						foreach($GLOBALS['TL_HOOKS']['fcsParseStartdata'] as $callback)
+						{
+							$this->import($callback[0]);
+							$this->$callback[0]->$callback[1]($GLOBALS['fcsSlider']['STARTDATA']);
+						}
+					}
+					
 					$objEndTemplate->startData = $GLOBALS['fcsSlider']['STARTDATA'];
 				}
 				$this->Template->endTemplete = $GLOBALS['fcsSlider']['ENDTEMPLATE'] ? $objEndTemplate->parse() : false;	
