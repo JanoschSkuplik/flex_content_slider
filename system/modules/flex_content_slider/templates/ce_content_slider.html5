@@ -4,7 +4,7 @@
 <?php if ($GLOBALS['fcsSlider']['LISTTEMPLATE']): ?>
 
 <?php if ($this->fcsType=='fcsStart'): ?>
-<div class="flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>">
+<div class="<?php echo $this->class; ?> flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>"<?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <ul class="slides">
 	<?php if ($this->startTemplate): echo $this->startTemplate; endif; ?>
 	<li class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
@@ -13,15 +13,16 @@
 	<li class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
 <?php else: ?>
 	</li>
-	<?php if ($this->endTemplete): echo $this->endTemplete; endif; ?>
+	
 </ul>
+<?php if ($this->endTemplete): echo $this->endTemplete; endif; ?>
 </div>
 <?php endif; ?>
 
 <?php else: ?>
 
 <?php if ($this->fcsType=='fcsStart'): ?>
-<div class="flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>">
+<div class="<?php echo $this->class; ?> flex_content_slider<?php echo $this->sliderClass ? ' ' . $this->sliderClass : ''; ?>" id="fcs_<?php echo $this->id; ?>"<?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	<div class="slides">
 	<?php if ($this->startTemplate): echo $this->startTemplate; endif; ?>
 	<div class="fcs_item<?php echo $this->itemClass ? ' ' . $this->itemClass : ''; ?>">
