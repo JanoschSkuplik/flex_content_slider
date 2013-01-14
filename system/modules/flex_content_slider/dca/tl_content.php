@@ -32,14 +32,22 @@
 /**
  * Table tl_content
  */
+
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'fcsType';
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['flex_content_slider'] = '{type_legend},type,fcsType';
 
+$GLOBALS['TL_DCA']['tl_content']['palettes']['flex_content_sliderfcsStart'] = '{type_legend},type,fcsType;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+
+if ($GLOBALS['TL_DCA']['tl_content']['flex_content_slider']['additional'])
+{
+	$GLOBALS['TL_DCA']['tl_content']['palettes']['flex_content_sliderfcsStart'] = str_replace('fcsType;', 'fcsType;' . $GLOBALS['TL_DCA']['tl_content']['flex_content_slider']['additional'], $GLOBALS['TL_DCA']['tl_content']['palettes']['flex_content_sliderfcsStart']);
+}
+
 $GLOBALS['TL_DCA']['tl_content']['fields']['fcsType'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['fcsType'],
-	'default'                 => 'start',
+	'default'                 => 'fcsStart',
 	'exclude'                 => true,
 	'inputType'               => 'radio',
 	'options'                 => array('fcsStart', 'fcsDivider', 'fcsStop'),
